@@ -1,6 +1,8 @@
 <?php
 
-use App\Http\Controllers\ApiController;
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,8 +17,35 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/endpoint', [ApiController::class, 'index']);
-
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/', function () {
+    return[
+        'API' => "It's Working!"
+    ];
+});
+
+Route::group([
+
+    'middleware' => 'api',
+    'prefix' => 'auth'
+
+], function ($router) {
+    Route::post('login', [AuthController::class, 'login']);
+    Route::post('logout', [AuthController::class, 'logout']);
+    Route::post('refresh', [AuthController::class, 'refresh']);
+    Route::post('me', [AuthController::class, 'me']);
+
+});
+
+//Route::middleware('auth:api')->group(function () {
+//    Route::get('/user', [UserController::class, 'getUserData']);
+//});
+
+Route::group(['middleware' => 'auth:api'], function (){
+    Route::get('/user', [UserController::class, 'getUserData']);
+});
+
+Route::apiResource('products', ProductController::class);
