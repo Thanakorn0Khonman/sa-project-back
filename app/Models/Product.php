@@ -12,7 +12,7 @@ class Product extends Model
         'name',
         'description',
         'price',
-        'stock_quantity',
+        'quantity',
         'category',
         'brand',
         'image', // Add brand to the fillable array

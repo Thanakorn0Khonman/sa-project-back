@@ -11,7 +11,7 @@ class UserController extends Controller
     public function getUserData(Request $request)
     {
         // Retrieve the authenticated user's data
-        $user = $request->user();
+        $user = $request->user()->role;
 
         return response()->json($user);
     }

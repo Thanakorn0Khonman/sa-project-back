@@ -49,3 +49,5 @@ Route::group(['middleware' => 'auth:api'], function (){
 });
 
 Route::apiResource('products', ProductController::class);
+
+Route::apiResource('products', ProductController::class);
