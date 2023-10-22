@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->decimal('price', 8, 2);
+            $table->text('image')->nullable();
             $table->string('brand')->nullable(); // Add the 'brand' column
             $table->string('category')->nullable(); // Add the 'category' column
             $table->integer('quantity'); // Change 'quantity' to 'amount'
