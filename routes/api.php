@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\CartController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\RegisterController;
@@ -52,4 +53,7 @@ Route::group(['middleware' => 'auth:api'], function (){
 });
 
 Route::apiResource('products', ProductController::class);
+
+Route::post('/cart/add/{product}',[CartController::class,'cartAdd']);
+Route::delete('/cart/remove/{product}',[CartController::class,'cartRemove']);
 
