@@ -452,7 +452,7 @@ class ProductSeeder extends Seeder
         • ATX";
         $product->price = 7290.00;
         $product->brand = "ASUS";
-        $product->category = "Mainbord";
+        $product->category = "Mainboard";
         $product->quantity = "100";
         $product->save();
 
@@ -465,7 +465,7 @@ class ProductSeeder extends Seeder
         • ATX";
         $product->price = 7000.00;
         $product->brand = "Intel";
-        $product->category = "Mainbord";
+        $product->category = "Mainboard";
         $product->quantity = "100";
         $product->save();
 
@@ -478,7 +478,7 @@ class ProductSeeder extends Seeder
         • ATX";
         $product->price = 7090.00;
         $product->brand = "Intel";
-        $product->category = "Mainbord";
+        $product->category = "Mainboard";
         $product->quantity = "100";
         $product->save();
 
@@ -491,7 +491,7 @@ class ProductSeeder extends Seeder
         • ATX";
         $product->price = 15700.00;
         $product->brand = "ASUS";
-        $product->category = "Mainbord";
+        $product->category = "Mainboard";
         $product->quantity = "100";
         $product->save();
 
@@ -504,7 +504,7 @@ class ProductSeeder extends Seeder
         • ATX";
         $product->price = 5390.00;
         $product->brand = "Intel";
-        $product->category = "Mainbord";
+        $product->category = "Mainboard";
         $product->quantity = "100";
         $product->save();
 
@@ -518,7 +518,7 @@ class ProductSeeder extends Seeder
         • 2 x M.2 socket";
         $product->price = 3990.00;
         $product->brand = "Intel";
-        $product->category = "Mainbord";
+        $product->category = "Mainboard";
         $product->quantity = "100";
         $product->save();
 
@@ -529,7 +529,7 @@ class ProductSeeder extends Seeder
         CPU Support :AMD AM4 Socket AMD Ryzen™ 2nd";
         $product->price = 2999.00;
         $product->brand = "Intel";
-        $product->category = "Mainbord";
+        $product->category = "Mainboard";
         $product->quantity = "100";
         $product->save();
 
@@ -542,7 +542,7 @@ class ProductSeeder extends Seeder
         • ATX";
         $product->price = 2890.00;
         $product->brand = "Intel";
-        $product->category = "Mainbord";
+        $product->category = "Mainboard";
         $product->quantity = "100";
         $product->save();
 
@@ -657,7 +657,7 @@ class ProductSeeder extends Seeder
         • PCIe 5.0 and 4.0";
         $product->price = 15700.00;
         $product->brand = "ASUS";
-        $product->category = "Asessary";
+        $product->category = "Display";
         $product->quantity = "100";
         $product->save();
 
@@ -670,7 +670,7 @@ class ProductSeeder extends Seeder
         Response Time : 4 ms";
         $product->price = 32000.00;
         $product->brand = "Intel";
-        $product->category = "Asessary";
+        $product->category = "Display";
         $product->quantity = "100";
         $product->save();
 
@@ -684,7 +684,7 @@ class ProductSeeder extends Seeder
         • PCIe 5.0 and 4.0";
         $product->price = 34500.00;
         $product->brand = "Intel";
-        $product->category = "Asessary";
+        $product->category = "Display";
         $product->quantity = "100";
         $product->save();
 
@@ -697,7 +697,7 @@ class ProductSeeder extends Seeder
         Response Time : 1 ms";
         $product->price = 15700.00;
         $product->brand = "Intel";
-        $product->category = "Asessary";
+        $product->category = "Display";
         $product->quantity = "100";
         $product->save();
 
@@ -707,7 +707,7 @@ class ProductSeeder extends Seeder
         $product->description = "DIMENSION 930 X 300 X 3 MM";
         $product->price = 1090.00;
         $product->brand = "Intel";
-        $product->category = "Asessary";
+        $product->category = "Display";
         $product->quantity = "100";
         $product->save();
 
@@ -717,7 +717,7 @@ class ProductSeeder extends Seeder
         $product->description = "DIMENSION 340 X 280 X 1 MM";
         $product->price = 450.00;
         $product->brand = "Intel";
-        $product->category = "Asessary";
+        $product->category = "Display";
         $product->quantity = "100";
         $product->save();
 
@@ -731,7 +731,7 @@ class ProductSeeder extends Seeder
         • PCIe 5.0 and 4.0";
         $product->price = 400.00;
         $product->brand = "Intel";
-        $product->category = "Asessary";
+        $product->category = "Display";
         $product->quantity = "100";
         $product->save();
 
@@ -741,7 +741,7 @@ class ProductSeeder extends Seeder
         $product->description = "Dimension 294 x 920 x 3 mm";
         $product->price = 1090.00;
         $product->brand = "Razer";
-        $product->category = "Asessary";
+        $product->category = "Display";
         $product->quantity = "100";
         $product->save();
 
