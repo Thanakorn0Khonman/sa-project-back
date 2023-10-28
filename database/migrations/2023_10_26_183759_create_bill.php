@@ -11,7 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('bill', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('audit_id')->constrained('users');
+            $table->foreignId('order_id')->constrained('products');
+            $table->decimal('price', 10, 2);
+            $table->timestamps();
+        });
     }
 
     /**
@@ -19,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('bill');
     }
 };
