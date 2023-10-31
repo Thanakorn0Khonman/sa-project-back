@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\CartController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\RegisterController;
+use App\Http\Controllers\Api\OrderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -56,4 +57,5 @@ Route::apiResource('products', ProductController::class);
 
 Route::post('/cart/add/{product}',[CartController::class,'cartAdd']);
 Route::delete('/cart/remove/{product}',[CartController::class,'cartRemove']);
+Route::post('orders', [OrderController::class, 'store']);
 
