@@ -91,4 +91,12 @@ class OrderController extends Controller
 
         return response()->json(['message' => 'Order deleted successfully']);
     }
+
+    public function index()
+    {
+        // Retrieve all orders
+        $orders = Order::all(); // Assuming you have an Order model
+
+        return response()->json(['orders' => $orders], 200);
+    }
 }

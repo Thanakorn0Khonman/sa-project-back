@@ -2,10 +2,10 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CartController;
+use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\RegisterController;
-use App\Http\Controllers\Api\OrderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -57,5 +57,9 @@ Route::apiResource('products', ProductController::class);
 
 Route::post('/cart/add/{product}',[CartController::class,'cartAdd']);
 Route::delete('/cart/remove/{product}',[CartController::class,'cartRemove']);
-Route::post('orders', [OrderController::class, 'store']);
 
+// Route to place an order
+Route::post('place-order', [OrderController::class, 'store']);
+
+// Route to get all orders
+Route::get('orders', [OrderController::class, 'index']);
