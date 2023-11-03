@@ -28,8 +28,25 @@ class ProductController extends Controller
     // Create a new product
     public function store(Request $request)
     {
-        $product = Product::create($request->all());
-        return response()->json($product, 201);
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'category' => 'required',
+            'brand' => 'required',
+            'price' => 'required|numeric',
+            'quantity' => 'required|integer',
+            'description' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust the image validation rules as needed
+        ]);
+
+        // Check if an image was uploaded
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('product_images', 'public');
+            $validatedData['image'] = $imagePath;
+        }
+
+        $product = Product::create($validatedData);
+
+        return response()->json(['message' => 'Product created successfully', 'product' => $product]);
     }
 
     // Update an existing product
