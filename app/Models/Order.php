@@ -16,6 +16,20 @@ class Order extends Model
         'total_price',
         'payment_receipt',
         'shipment_method',
+        'products',
+        'products.*.productId',
+        'products.*.quantity'
         // Add other fillable attributes here
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function products()
+{
+    return $this->belongsToMany(Product::class)->withPivot('quantity');
+}
+
 }

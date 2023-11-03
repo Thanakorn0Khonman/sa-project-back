@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use Illuminate\Support\Facades\Validator;
@@ -11,29 +12,34 @@ class OrderController extends Controller
 {
     // Create a new order
     public function store(Request $request)
-    {
-        // Validate the request data
-        $validator = Validator::make($request->all(), [
-            'user_id' => 'required',
-            'user_name' => 'required',
-            'address' => 'required',
-            'total_price' => 'required',
-            'payment_receipt' => 'required',
-            'shipment_method' => 'required',
-            // Add validation rules for other fields
-        ]);
+{
+    $validatedData = $request->validate([
+        'user_id' => 'required',
+        'user_name' => 'required',
+        'address' => 'required',
+        'total_price' => 'required',
+        'payment_receipt' => 'required',
+        'shipment_method' => 'required',
+        'products' => 'required|array|min:1',
+    ]);
 
-        if ($validator->fails()) {
-            return response()->json(['error' => $validator->errors()], 400);
-        }
+    // Create the order
+    $order = Order::create([
+        'user_id' => $validatedData['user_id'],
+        'user_name' => $validatedData['user_name'],
+        'address' => $validatedData['address'],
+        'total_price' => $validatedData['total_price'],
+        'payment_receipt' => $validatedData['payment_receipt'],
+        'shipment_method' => $validatedData['shipment_method'],
+    ]);
 
-        $validatedData = $validator->validated();
-
-        // Create a new order
-        $order = Order::create($validatedData);
-
-        return response()->json(['message' => 'Order created successfully', 'order' => $order]);
+    foreach ($validatedData['products'] as $productData) {
+        // Attach the product to the order with the quantity
+        $order->products()->attach($productData['product_id'], ['quantity' => $productData['quantity']]);
     }
+
+    return response()->json(['message' => 'Order created successfully', 'order' => $order]);
+}
 
     // Retrieve a specific order by ID
     public function show($id)

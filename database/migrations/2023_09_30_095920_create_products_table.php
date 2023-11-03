@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('image')->nullable();
             $table->string('brand')->nullable(); // Add the 'brand' column
             $table->string('category')->nullable(); // Add the 'category' column
-            $table->integer('quantity'); // Change 'quantity' to 'amount'
+            $table->integer('quantity')->default(0); // Change 'quantity' to 'amount'
             $table->timestamps();
         });
     }

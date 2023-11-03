@@ -18,4 +18,8 @@ class Product extends Model
         'brand',
         'image', // Add brand to the fillable array
     ];
+    public function orders()
+{
+    return $this->belongsToMany(Order::class)->withPivot('quantity');
+}
 }
