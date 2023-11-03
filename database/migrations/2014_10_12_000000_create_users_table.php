@@ -21,6 +21,8 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('role')->default('Customer');
+            $table->string('bank');
+            $table->integer('bankNumber');
             $table->rememberToken();
             $table->timestamps();
         });
