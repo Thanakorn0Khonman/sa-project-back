@@ -115,7 +115,7 @@ class OrderController extends Controller
         }
 
         $validator = Validator::make($request->all(), [
-            'status' => 'required|in:Pending,Preparing,Shipped,Delivered,Refunding', // Add the allowed status values
+            'status' => 'required|in:Pending,Preparing,Packing,Delivering,CompleteDelivery,ReportPending,RefundPending,ResentPending,Refunding,CompleteRefund', // Add the allowed status values
         ]);
 
         if ($validator->fails()) {
