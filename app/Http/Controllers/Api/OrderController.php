@@ -12,34 +12,34 @@ class OrderController extends Controller
 {
     // Create a new order
     public function store(Request $request)
-{
-    $validatedData = $request->validate([
-        'user_id' => 'required',
-        'user_name' => 'required',
-        'address' => 'required',
-        'total_price' => 'required',
-        'payment_receipt' => 'required',
-        'shipment_method' => 'required',
-        'products' => 'required|array|min:1',
-    ]);
+    {
+        $validatedData = $request->validate([
+            'user_id' => 'required',
+            'user_name' => 'required',
+            'address' => 'required',
+            'total_price' => 'required',
+            'payment_receipt' => 'required',
+            'shipment_method' => 'required',
+            'products' => 'required|array|min:1',
+        ]);
 
-    // Create the order
-    $order = Order::create([
-        'user_id' => $validatedData['user_id'],
-        'user_name' => $validatedData['user_name'],
-        'address' => $validatedData['address'],
-        'total_price' => $validatedData['total_price'],
-        'payment_receipt' => $validatedData['payment_receipt'],
-        'shipment_method' => $validatedData['shipment_method'],
-    ]);
+        // Create the order
+        $order = Order::create([
+            'user_id' => $validatedData['user_id'],
+            'user_name' => $validatedData['user_name'],
+            'address' => $validatedData['address'],
+            'total_price' => $validatedData['total_price'],
+            'payment_receipt' => $validatedData['payment_receipt'],
+            'shipment_method' => $validatedData['shipment_method'],
+        ]);
 
-    foreach ($validatedData['products'] as $productData) {
-        // Attach the product to the order with the quantity
-        $order->products()->attach($productData['product_id'], ['quantity' => $productData['quantity']]);
+        foreach ($validatedData['products'] as $productData) {
+            // Attach the product to the order with the quantity
+            $order->products()->attach($productData['product_id'], ['quantity' => $productData['quantity']]);
+        }
+
+        return response()->json(['message' => 'Order created successfully', 'order' => $order]);
     }
-
-    return response()->json(['message' => 'Order created successfully', 'order' => $order]);
-}
 
     // Retrieve a specific order by ID
     public function show($id)
@@ -104,5 +104,29 @@ class OrderController extends Controller
         $orders = Order::all(); // Assuming you have an Order model
 
         return response()->json(['orders' => $orders], 200);
+    }
+
+    public function update_status(Request $request, $id)
+    {
+        $order = Order::find($id);
+
+        if (!$order) {
+            return response()->json(['message' => 'Order not found'], 404);
+        }
+
+        $validator = Validator::make($request->all(), [
+            'status' => 'required|in:Pending,Preparing,Shipped,Delivered,Refunding', // Add the allowed status values
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 400);
+        }
+
+        $validatedData = $validator->validated();
+
+        // Update the order's status with the new status
+        $order->update(['status' => $validatedData['status']]);
+
+        return response()->json(['message' => 'Order status updated successfully', 'order' => $order]);
     }
 }

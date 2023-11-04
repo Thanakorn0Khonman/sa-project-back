@@ -18,7 +18,8 @@ class Order extends Model
         'shipment_method',
         'products',
         'products.*.productId',
-        'products.*.quantity'
+        'products.*.quantity',
+        'status',        
         // Add other fillable attributes here
     ];
 
