@@ -33,12 +33,15 @@ class RegisterController extends Controller
             'address' =>['required', 'string', 'max:255'],
         ]);
 
+        $role = $request->input('role', 'Customer');
+
         $user = User::create([
             'name' => $request->name,
             'username' => $request->username,
             'email' => $request->email,
             'address' => $request->address,
             'password' => Hash::make($request->password),
+            'role' => $role,
         ]);
 
         event(new Registered($user));
