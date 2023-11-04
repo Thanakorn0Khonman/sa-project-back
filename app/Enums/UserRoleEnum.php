@@ -6,6 +6,6 @@ enum UserRoleEnum:string {
 
     case Admin = 'Admin';
     case Customer = 'Customer';
-    case Accounting = 'Accounting';
-    case Warehouse = 'Warehouse';
+    case Audit = 'Audit';
+    case Delivery = 'Delivery';
 }
