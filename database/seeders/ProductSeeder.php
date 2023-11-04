@@ -21,7 +21,7 @@ class ProductSeeder extends Seeder
         • CPU Cooler NOT Included
         • Intel UHD Graphics 770
         • PCIe 5.0 and 4.0";
-        $product->price = 15700.00;
+        $product->price = 15700;
         $product->brand = "Intel";
         $product->category = "CPU";
         $product->quantity = "100";
@@ -35,7 +35,7 @@ class ProductSeeder extends Seeder
         • Intel UHD Graphics 770
         • CPU Cooler Not Included
         • PCIe 5.0 and 4.0";
-        $product->price = 10900.00;
+        $product->price = 10900;
         $product->brand = "Intel";
         $product->category = "CPU";
         $product->quantity = "100";
@@ -49,7 +49,7 @@ class ProductSeeder extends Seeder
         • CPU Cooler Not Included
         • Intel UHD Graphics 750
         • PCIe 4.0";
-        $product->price = 16900.00;
+        $product->price = 16900;
         $product->brand = "Intel";
         $product->category = "CPU";
         $product->quantity = "100";
@@ -61,7 +61,7 @@ class ProductSeeder extends Seeder
         $product->description = "• CORES 10
         • THREADS 20
         • 5.30 GHz";
-        $product->price = 18400.00;
+        $product->price = 18400;
         $product->brand = "Intel";
         $product->category = "CPU";
         $product->quantity = "100";
@@ -75,7 +75,7 @@ class ProductSeeder extends Seeder
         • CPU Cooler not Included
         • Discrete Graphics Required, No Integrated Graphics
         • PCIe 4.0";
-        $product->price = 17900.00;
+        $product->price = 17900;
         $product->brand = "AMD";
         $product->category = "CPU";
         $product->quantity = "100";
@@ -89,7 +89,7 @@ class ProductSeeder extends Seeder
         • CPU Cooler NOT Included
         • Discrete Graphics Required, No Integrated Graphics
         • PCIe 4.0";
-        $product->price = 8390.00;
+        $product->price = 8390;
         $product->brand = "AMD";
         $product->category = "CPU";
         $product->quantity = "100";
@@ -102,7 +102,7 @@ class ProductSeeder extends Seeder
         • 12 Threads
         • Discrete Graphics Required, No Integrated Graphics
         • PCIe 4.0";
-        $product->price = 5490.00;
+        $product->price = 5490;
         $product->brand = "AMD";
         $product->category = "CPU";
         $product->quantity = "100";
@@ -116,7 +116,7 @@ class ProductSeeder extends Seeder
         • CPU Cooler not Included
         • Discrete Graphics Required, No Integrated Graphics
         • PCIe 4.0";
-        $product->price = 15700.00;
+        $product->price = 15700;
         $product->brand = "AMD";
         $product->category = "CPU";
         $product->quantity = "100";
@@ -129,7 +129,7 @@ class ProductSeeder extends Seeder
         Up to 450 IPS / 50 g acceleration
         Razer Mechanical Mouse switches
         7 independently programmable Hyperesponse buttons";
-        $product->price = 1390.00;
+        $product->price = 1390;
         $product->brand = "Razer";
         $product->category = "Gameing-Gear";
         $product->quantity = "100";
@@ -143,7 +143,7 @@ class ProductSeeder extends Seeder
         • CPU Cooler NOT Included
         • Intel UHD Graphics 770
         • PCIe 5.0 and 4.0";
-        $product->price = 2490.00;
+        $product->price = 2490;
         $product->brand = "Razer";
         $product->category = "Gameing-Gear";
         $product->quantity = "100";
@@ -156,7 +156,7 @@ class ProductSeeder extends Seeder
         • Lighting : RGB
         • Keycap Font : English/Thai
         • Connectivity : USB Type-A (Wired)";
-        $product->price = 3490.00;
+        $product->price = 3490;
         $product->brand = "Razer";
         $product->category = "Gameing-Gear";
         $product->quantity = "100";
@@ -170,7 +170,7 @@ class ProductSeeder extends Seeder
         • English / Thai Keycap
         • ANSI
         • Wired USB";
-        $product->price = 1290.00;
+        $product->price = 1290;
         $product->brand = "Razer";
         $product->category = "Gameing-Gear";
         $product->quantity = "100";
@@ -182,7 +182,7 @@ class ProductSeeder extends Seeder
         $product->description = "• 30%
         • 2.4GHz 
         • 20m";
-        $product->price = 3090.00;
+        $product->price = 3090;
         $product->brand = "Hyper X";
         $product->category = "Gameing-Gear";
         $product->quantity = "100";
@@ -196,7 +196,7 @@ class ProductSeeder extends Seeder
         Headphone Input Impedance	32 Ohms
         Headphone Sensitivity	98dB
         Connector	Jack 3.5mm/USB";
-        $product->price = 5990.00;
+        $product->price = 5990;
         $product->brand = "Intel";
         $product->category = "Gameing-Gear";
         $product->quantity = "100";
@@ -207,7 +207,7 @@ class ProductSeeder extends Seeder
         $product->name = "Logitech G Pro X";
         $product->description = "• Headset Response : 20 Hz - 20000 Hz
         • Mic Response : 100 Hz - 10000 Hz";
-        $product->price = 4490.00;
+        $product->price = 4490;
         $product->brand = "Intel";
         $product->category = "Gameing-Gear";
         $product->quantity = "100";
@@ -218,7 +218,7 @@ class ProductSeeder extends Seeder
         $product->name = "Razer Nari Ultimate";
         $product->description = "HEADSET RESPONSE : 20 Hz - 20000 Hz
         MIC RESPONSE : 100 Hz - 65000 Hz";
-        $product->price = 8190.00;
+        $product->price = 8190;
         $product->brand = "Intel";
         $product->category = "Gameing-Gear";
         $product->quantity = "100";
@@ -232,7 +232,7 @@ class ProductSeeder extends Seeder
         Core Clock	1560 MHz
         Boost Clock	1920 MHz
         Stream Processors	10752 Units";
-        $product->price = 15700.00;
+        $product->price = 15700;
         $product->brand = "NVIDIA";
         $product->category = "GPU";
         $product->quantity = "100";
@@ -246,7 +246,7 @@ class ProductSeeder extends Seeder
         Core Clock	1560 MHz
         Boost Clock	1920 MHz
         Stream Processors	10752 Units";
-        $product->price = 15700.00;
+        $product->price = 15700;
         $product->brand = "NVIDIAl";
         $product->category = "GPU";
         $product->quantity = "100";
@@ -262,7 +262,7 @@ class ProductSeeder extends Seeder
         Stream Processors	5120 Units
         Memory Clock	16.0 Gbps
         Memory Size	16 GB";
-        $product->price = 25900.00;
+        $product->price = 25900;
         $product->brand = "AMD";
         $product->category = "GPU";
         $product->quantity = "100";
@@ -276,7 +276,7 @@ class ProductSeeder extends Seeder
         Core Clock	1560 MHz
         Boost Clock	1920 MHz
         Stream Processors	10752 Units";
-        $product->price = 10900.00;
+        $product->price = 10900;
         $product->brand = "NVIDIA";
         $product->category = "GPU";
         $product->quantity = "100";
@@ -291,7 +291,7 @@ class ProductSeeder extends Seeder
         Boost Clock	2310 MHz
         Stream Processors	4608 Units
         Memory Clock	16.0 Gbps";
-        $product->price = 44200.00;
+        $product->price = 44200;
         $product->brand = "AMD";
         $product->category = "GPU";
         $product->quantity = "100";
@@ -305,7 +305,7 @@ class ProductSeeder extends Seeder
         Core Clock	1560 MHz
         Boost Clock	1920 MHz
         Stream Processors	10752 Units";
-        $product->price = 7999.00;
+        $product->price = 7999;
         $product->brand = "NVIDIA";
         $product->category = "GPU";
         $product->quantity = "100";
@@ -318,7 +318,7 @@ class ProductSeeder extends Seeder
         GPU Clock : 2321 MHz (OC up to 2424 MHz )
         CUDA Core : 2560
         Video Memory: GDDR6 12GB";
-        $product->price = 9600.00;
+        $product->price = 9600;
         $product->brand = "AMD";
         $product->category = "GPU";
         $product->quantity = "100";
@@ -332,7 +332,7 @@ class ProductSeeder extends Seeder
         Memory Interface : 192-bit
         Bus Interface : PCI Express 3.0
         Output : HDMI x 1, DisplayPort x 3";
-        $product->price = 7450.00;
+        $product->price = 7450;
         $product->brand = "NVIDIA";
         $product->category = "GPU";
         $product->quantity = "100";
@@ -345,7 +345,7 @@ class ProductSeeder extends Seeder
         Rotational Speed : 7200 RPM
         Interface : SATA III
         Form Factor : 3.5";
-        $product->price = 1050.00;
+        $product->price = 1050;
         $product->brand = "Intel";
         $product->category = "Harddisk";
         $product->quantity = "100";
@@ -358,7 +358,7 @@ class ProductSeeder extends Seeder
         Rotational Speed : 7200 RPM
         Interface : SATA III
         Form Factor : 3.5";
-        $product->price = 1090.00;
+        $product->price = 1090;
         $product->brand = "Intel";
         $product->category = "Harddisk";
         $product->quantity = "100";
@@ -371,7 +371,7 @@ class ProductSeeder extends Seeder
         Rotational Speed : 5900 RPM
         Interface : SATA III
         Form Factor : 3.5";
-        $product->price = 1090.00;
+        $product->price = 1090;
         $product->brand = "Intel";
         $product->category = "Harddisk";
         $product->quantity = "100";
@@ -384,7 +384,7 @@ class ProductSeeder extends Seeder
         Rotational Speed : 7200 RPM
         Interface : SATA III
         Form Factor : 3.5";
-        $product->price = 3200.00;
+        $product->price = 3200;
         $product->brand = "Intel";
         $product->category = "Harddisk";
         $product->quantity = "100";
@@ -397,7 +397,7 @@ class ProductSeeder extends Seeder
         Rotational Speed : 7200 RPM
         Interface : SATA III
         Form Factor : 3.5";
-        $product->price = 1030.00;
+        $product->price = 1030;
         $product->brand = "Intel";
         $product->category = "Harddisk";
         $product->quantity = "100";
@@ -410,7 +410,7 @@ class ProductSeeder extends Seeder
         Rotation Speed : 7200 RPM
         Category : Performance
         NAND Flash : 8GB MLC NAND";
-        $product->price = 2590.00;
+        $product->price = 2590;
         $product->brand = "Intel";
         $product->category = "Harddisk";
         $product->quantity = "100";
@@ -423,7 +423,7 @@ class ProductSeeder extends Seeder
         Rotational Speed : 7200 RPM
         Interface : SATA III
         Form Factor : 3.5";
-        $product->price = 3500.00;
+        $product->price = 3500;
         $product->brand = "Intel";
         $product->category = "Harddisk";
         $product->quantity = "100";
@@ -437,7 +437,7 @@ class ProductSeeder extends Seeder
         • CPU Cooler NOT Included
         • Intel UHD Graphics 770
         • PCIe 5.0 and 4.0";
-        $product->price = 1700.00;
+        $product->price = 1700;
         $product->brand = "Intel";
         $product->category = "Harddisk";
         $product->quantity = "100";
@@ -450,7 +450,7 @@ class ProductSeeder extends Seeder
         • AMD B550
         • 4 x DDR4 DIMM
         • ATX";
-        $product->price = 7290.00;
+        $product->price = 7290;
         $product->brand = "ASUS";
         $product->category = "Mainboard";
         $product->quantity = "100";
@@ -463,7 +463,7 @@ class ProductSeeder extends Seeder
         • AMD B550
         • 4 x DDR4 DIMM
         • ATX";
-        $product->price = 7000.00;
+        $product->price = 7000;
         $product->brand = "Intel";
         $product->category = "Mainboard";
         $product->quantity = "100";
@@ -476,7 +476,7 @@ class ProductSeeder extends Seeder
         • AMD X570
         • 4 x DDR4 DIMM
         • ATX";
-        $product->price = 7090.00;
+        $product->price = 7090;
         $product->brand = "Intel";
         $product->category = "Mainboard";
         $product->quantity = "100";
@@ -489,7 +489,7 @@ class ProductSeeder extends Seeder
         • AMD X570
         • 4 x DDR4 DIMM
         • ATX";
-        $product->price = 15700.00;
+        $product->price = 15700;
         $product->brand = "ASUS";
         $product->category = "Mainboard";
         $product->quantity = "100";
@@ -502,7 +502,7 @@ class ProductSeeder extends Seeder
         • AMD B550
         • 4 x DDR4 DIMM
         • ATX";
-        $product->price = 5390.00;
+        $product->price = 5390;
         $product->brand = "Intel";
         $product->category = "Mainboard";
         $product->quantity = "100";
@@ -516,7 +516,7 @@ class ProductSeeder extends Seeder
         • 1 x DisplayPort
         • 1 x HDMI
         • 2 x M.2 socket";
-        $product->price = 3990.00;
+        $product->price = 3990;
         $product->brand = "Intel";
         $product->category = "Mainboard";
         $product->quantity = "100";
@@ -527,7 +527,7 @@ class ProductSeeder extends Seeder
         $product->name = "ASUS Prime B450M-A/CSM";
         $product->description = "Model :PRIME B450M-K
         CPU Support :AMD AM4 Socket AMD Ryzen™ 2nd";
-        $product->price = 2999.00;
+        $product->price = 2999;
         $product->brand = "Intel";
         $product->category = "Mainboard";
         $product->quantity = "100";
@@ -540,7 +540,7 @@ class ProductSeeder extends Seeder
         • AMD B450
         • 4 x DDR4 DIMM
         • ATX";
-        $product->price = 2890.00;
+        $product->price = 2890;
         $product->brand = "Intel";
         $product->category = "Mainboard";
         $product->quantity = "100";
@@ -553,7 +553,7 @@ class ProductSeeder extends Seeder
         • DDR4
         • 3200MHz
         • CMK16GX4M2B3200C16";
-        $product->price = 2950.00;
+        $product->price = 2950;
         $product->brand = "Intel";
         $product->category = "RAM";
         $product->quantity = "100";
@@ -566,7 +566,7 @@ class ProductSeeder extends Seeder
         • DDR4
         • 3200MHz
         • F4-3200C16D-16GTZR";
-        $product->price = 2190.00;
+        $product->price = 2190;
         $product->brand = "Intel";
         $product->category = "RAM";
         $product->quantity = "100";
@@ -578,7 +578,7 @@ class ProductSeeder extends Seeder
         $product->description = "Module densities up to 16GB
         Speeds up to 3000 MT/s
         Battle-tested design and performance";
-        $product->price = 1700.00;
+        $product->price = 1700;
         $product->brand = "Intel";
         $product->category = "RAM";
         $product->quantity = "100";
@@ -591,7 +591,7 @@ class ProductSeeder extends Seeder
         • DDR4
         • 3200MHz
         • HX432C16PB3AK2/16";
-        $product->price = 2000.00;
+        $product->price = 2000;
         $product->brand = "Intel";
         $product->category = "RAM";
         $product->quantity = "100";
@@ -603,7 +603,7 @@ class ProductSeeder extends Seeder
         $product->description = "Module densities up to 16GB
         Speeds up to 3000 MT/s
         Battle-tested design and performance";
-        $product->price = 2150.00;
+        $product->price = 2150;
         $product->brand = "Intel";
         $product->category = "RAM";
         $product->quantity = "100";
@@ -616,7 +616,7 @@ class ProductSeeder extends Seeder
         Latest ARGB technology
         Aluminum alloy heat sink with high performance
         Supports Intel & AMD motherboards";
-        $product->price = 1990.00;
+        $product->price = 1990;
         $product->brand = "Intel";
         $product->category = "RAM";
         $product->quantity = "100";
@@ -628,7 +628,7 @@ class ProductSeeder extends Seeder
         $product->description = "• 32GB (16GBx2)
         • DDR4
         • 3200MHz";
-        $product->price = 2590.00;
+        $product->price = 2590;
         $product->brand = "Intel";
         $product->category = "RAM";
         $product->quantity = "100";
@@ -641,7 +641,7 @@ class ProductSeeder extends Seeder
         Speed : 3200 MHz
         Part Number : CMT16GX4M2C3200C16
         8GBx2',";
-        $product->price = 6800.00;
+        $product->price = 6800;
         $product->brand = "Intel";
         $product->category = "RAM";
         $product->quantity = "100";
@@ -655,7 +655,7 @@ class ProductSeeder extends Seeder
         • CPU Cooler NOT Included
         • Intel UHD Graphics 770
         • PCIe 5.0 and 4.0";
-        $product->price = 15700.00;
+        $product->price = 15700;
         $product->brand = "ASUS";
         $product->category = "Display";
         $product->quantity = "100";
@@ -668,7 +668,7 @@ class ProductSeeder extends Seeder
         Brightness : 300 cd/m²
         Contrast : 1000 : 1
         Response Time : 4 ms";
-        $product->price = 32000.00;
+        $product->price = 32000;
         $product->brand = "Intel";
         $product->category = "Display";
         $product->quantity = "100";
@@ -682,7 +682,7 @@ class ProductSeeder extends Seeder
         • CPU Cooler NOT Included
         • Intel UHD Graphics 770
         • PCIe 5.0 and 4.0";
-        $product->price = 34500.00;
+        $product->price = 34500;
         $product->brand = "Intel";
         $product->category = "Display";
         $product->quantity = "100";
@@ -695,7 +695,7 @@ class ProductSeeder extends Seeder
         Brightness : 400 cd/m²
         Contrast : 100000000 : 1
         Response Time : 1 ms";
-        $product->price = 15700.00;
+        $product->price = 15700;
         $product->brand = "Intel";
         $product->category = "Display";
         $product->quantity = "100";
@@ -705,7 +705,7 @@ class ProductSeeder extends Seeder
         $product->id = "53";
         $product->name = "SteelSeries QcK";
         $product->description = "DIMENSION 930 X 300 X 3 MM";
-        $product->price = 1090.00;
+        $product->price = 1090;
         $product->brand = "Intel";
         $product->category = "Display";
         $product->quantity = "100";
@@ -715,7 +715,7 @@ class ProductSeeder extends Seeder
         $product->id = "54";
         $product->name = "Corsair MM300";
         $product->description = "DIMENSION 340 X 280 X 1 MM";
-        $product->price = 450.00;
+        $product->price = 450;
         $product->brand = "Intel";
         $product->category = "Display";
         $product->quantity = "100";
@@ -729,7 +729,7 @@ class ProductSeeder extends Seeder
         • CPU Cooler NOT Included
         • Intel UHD Graphics 770
         • PCIe 5.0 and 4.0";
-        $product->price = 400.00;
+        $product->price = 400;
         $product->brand = "Intel";
         $product->category = "Display";
         $product->quantity = "100";
@@ -739,7 +739,7 @@ class ProductSeeder extends Seeder
         $product->id = "56";
         $product->name = "Razer Goliathus";
         $product->description = "Dimension 294 x 920 x 3 mm";
-        $product->price = 1090.00;
+        $product->price = 1090;
         $product->brand = "Razer";
         $product->category = "Display";
         $product->quantity = "100";
