@@ -4,10 +4,10 @@ namespace App\Enums;
 
 enum OrderStatusEnum: string {
     case Pending = 'Pending';
-    case PaymentChecking = 'Preparing';
+    case Preparing = 'Preparing';
     case Packing = 'Packing';
     case Delivering = 'Delivering';
-    case Complete = 'Complete';
+    case CompleteDelivery = 'Complete Delivery';
 
     case ReportPending = 'Report Pending';
     case RefundPending = 'Refund Pending';
