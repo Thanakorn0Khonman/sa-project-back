@@ -65,3 +65,5 @@ Route::post('place-order', [OrderController::class, 'store']);
 Route::get('orders', [OrderController::class, 'index']);
 
 Route::put('/orders/{id}/update_status', [OrderController::class,'update_status']);
+
+Route::delete('/orders/{id}/delete_order', [OrderController::class,'destroy']);
