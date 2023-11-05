@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('bill', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('audit_id')->constrained('users');
-            $table->foreignId('order_id')->constrained('products');
+            $table->foreignId('customer_id')->constrained('users');
+            $table->foreignId('order_id')->constrained('orders');
+            $table->foreignId('product_id')->constrained('products');
             $table->decimal('price', 10, 2);
             $table->timestamps();
         });
