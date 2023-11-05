@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\RegisterController;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -63,6 +64,8 @@ Route::post('place-order', [OrderController::class, 'store']);
 
 // Route to get all orders
 Route::get('orders', [OrderController::class, 'index']);
+
+Route::apiResource('user', UserController::class);
 
 Route::put('/orders/{id}/update_status', [OrderController::class,'update_status']);
 

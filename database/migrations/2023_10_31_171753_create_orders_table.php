@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('user_name');
             $table->string('address');
             $table->decimal('total_price', 10, 2);
-            $table->string('payment_receipt');
+            $table->string('payment_receipt')->nullable();
             $table->string('shipment_method');
             $table->string('status')->default('Pending'); // Add the 'status' field with default value 'Pending'
             $table->timestamps();
