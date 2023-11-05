@@ -31,6 +31,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "2";
         $product->name = "Intel Core I5 12600K";
+        $product->image = "product_images/02.jpg";
         $product->description = "• 10 (6P+4E) Cores
         • 16 Threads 
         • Intel UHD Graphics 770
@@ -45,6 +46,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "3";
         $product->name = "Intel Core i9-11900K";
+        $product->image = "product_images/03.jpg";
         $product->description = "• 8 Cores
         • 16 Threads
         • CPU Cooler Not Included
@@ -59,6 +61,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "4";
         $product->name = "Intel Core i9-10900K";
+        $product->image = "product_images/04.jpg";
         $product->description = "• CORES 10
         • THREADS 20
         • 5.30 GHz";
@@ -71,6 +74,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "5";
         $product->name = "AMD Ryzen 9 5950X";
+        $product->image = "product_images/05.jpg";
         $product->description = "• 16 Cores
         • 32 Threads
         • CPU Cooler not Included
@@ -85,6 +89,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "6";
         $product->name = "AMD Ryzen 7 5800X";
+        $product->image = "product_images/06.jpg";
         $product->description = "• 8 Cores
         • 16 Threads
         • CPU Cooler NOT Included
@@ -99,6 +104,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "7";
         $product->name = "AMD Ryzen 5 5600x";
+        $product->image = "product_images/07.jpg";
         $product->description = "• 6 Cores
         • 12 Threads
         • Discrete Graphics Required, No Integrated Graphics
@@ -112,6 +118,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "8";
         $product->name = "AMD Ryzen 9 5900X";
+        $product->image = "product_images/08.jpg";
         $product->description = "• 12 Cores
         • 24 Threads
         • CPU Cooler not Included
@@ -126,6 +133,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "9";
         $product->name = "Razer DeathAdder Elite";
+        $product->image = "product_images/09.jpg";
         $product->description = "True 16,000 DPI optical sensor
         Up to 450 IPS / 50 g acceleration
         Razer Mechanical Mouse switches
@@ -139,6 +147,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "10";
         $product->name = "RAZER MAMBA ELITE";
+        $product->image = "product_images/10.jpg";
         $product->description = "• 16 (8P+8E) Cores
         • 24 Threads
         • CPU Cooler NOT Included
@@ -153,6 +162,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "11";
         $product->name = "Razer BlackWidow V3";
+        $product->image = "product_images/11.jpg";
         $product->description = "• Switch : Razer Green Mechanical Switches
         • Lighting : RGB
         • Keycap Font : English/Thai
@@ -166,6 +176,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "12";
         $product->name = "Razer Gaming Keyboard Ornata V3 X";
+        $product->image = "product_images/12.jpg";
         $product->description = "• Membrane
         • RGB LED
         • English / Thai Keycap
@@ -180,6 +191,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "13";
         $product->name = "HyperX Cloud II";
+        $product->image = "product_images/13.jpg";
         $product->description = "• 30%
         • 2.4GHz 
         • 20m";
@@ -192,6 +204,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "14";
         $product->name = "SteelSeries Arctis 7";
+        $product->image = "product_images/14.jpg";
         $product->description = "Driver Unit	40mm.
         Headphone Frequency Response	20 - 20kHz
         Headphone Input Impedance	32 Ohms
@@ -206,6 +219,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "15";
         $product->name = "Logitech G Pro X";
+        $product->image = "product_images/15.jpg";
         $product->description = "• Headset Response : 20 Hz - 20000 Hz
         • Mic Response : 100 Hz - 10000 Hz";
         $product->price = 4490;
@@ -217,6 +231,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "16";
         $product->name = "Razer Nari Ultimate";
+        $product->image = "product_images/16.jpg";
         $product->description = "HEADSET RESPONSE : 20 Hz - 20000 Hz
         MIC RESPONSE : 100 Hz - 65000 Hz";
         $product->price = 8190;
@@ -224,10 +239,10 @@ class ProductSeeder extends Seeder
         $product->category = "Gameing-Gear";
         $product->quantity = "100";
         $product->save();
-
         $product = new Product();
         $product->id = "17";
         $product->name = "NVIDIA GeForce RTX 3090";
+        $product->image = "product_images/17.jpg";
         $product->description = "Chipset Manufacturer	NVIDIA GeForce
         GPU	GeForce RTX 3090 Ti
         Core Clock	1560 MHz
@@ -242,6 +257,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "18";
         $product->name = "NVIDIA GeForce RTX 3080";
+        $product->image = "product_images/18.jpg";
         $product->description = "Chipset Manufacturer	NVIDIA GeForce
         GPU	GeForce RTX 3090 Ti
         Core Clock	1560 MHz
@@ -256,6 +272,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "19";
         $product->name = "AMD Radeon RX 6900 XT";
+        $product->image = "product_images/19.jpg";
         $product->description = "Chipset Manufacturer	AMD Radeon
         GPU	Radeon RX 6900 XT
         Core Clock	2015 MHz
@@ -272,6 +289,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "20";
         $product->name = "NVIDIA GeForce RTX 3070";
+        $product->image = "product_images/20.jpg";
         $product->description = "Chipset Manufacturer	NVIDIA GeForce
         GPU	GeForce RTX 3090 Ti
         Core Clock	1560 MHz
@@ -286,6 +304,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "21";
         $product->name = "AMD Radeon RX 6800 XT";
+        $product->image = "product_images/21.jpg";
         $product->description = "Chipset Manufacturer	AMD Radeon
         GPU	Radeon RX 6800 XT
         Core Clock	1825 MHz
@@ -301,6 +320,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "22";
         $product->name = "NVIDIA GeForce RTX 3060 Ti";
+        $product->image = "product_images/22.jpg";
         $product->description = "Chipset Manufacturer	NVIDIA GeForce
         GPU	GeForce RTX 3090 Ti
         Core Clock	1560 MHz
@@ -315,6 +335,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "23";
         $product->name = "AMD Radeon RX 6700 XT";
+        $product->image = "product_images/23.jpg";
         $product->description = "GPU : AMD Radeon RX 6700
         GPU Clock : 2321 MHz (OC up to 2424 MHz )
         CUDA Core : 2560
@@ -328,6 +349,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "24";
         $product->name = "NVIDIA GeForce GTX 1660 Super";
+        $product->image = "product_images/24.jpg";
         $product->description = "Memory Size : 6GB
         Memory Type : GDDR6
         Memory Interface : 192-bit
@@ -342,6 +364,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "25";
         $product->name = "Seagate Barracuda";
+        $product->image = "product_images/25.jpg";
         $product->description = "Capacity : 1 TB
         Rotational Speed : 7200 RPM
         Interface : SATA III
@@ -355,6 +378,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "26";
         $product->name = "Western Digital Blue";
+        $product->image = "product_images/26.jpg";
         $product->description = "Capacity : 1 TB
         Rotational Speed : 7200 RPM
         Interface : SATA III
@@ -368,6 +392,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "27";
         $product->name = "Seagate IronWolf";
+        $product->image = "product_images/27.jpg";
         $product->description = "Capacity : 1 TB
         Rotational Speed : 5900 RPM
         Interface : SATA III
@@ -381,6 +406,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "28";
         $product->name = "Western Digital Black";
+        $product->image = "product_images/28.jpg";
         $product->description = "Capacity : 1 TB
         Rotational Speed : 7200 RPM
         Interface : SATA III
@@ -394,6 +420,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "29";
         $product->name = "Toshiba P300";
+        $product->image = "product_images/29.jpg";
         $product->description = "Capacity : 1 TB
         Rotational Speed : 7200 RPM
         Interface : SATA III
@@ -407,6 +434,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "30";
         $product->name = "Seagate FireCuda";
+        $product->image = "product_images/30.jpg";
         $product->description = "Capacity : 1 TB
         Rotation Speed : 7200 RPM
         Category : Performance
@@ -420,6 +448,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "31";
         $product->name = "Western Digital Red";
+        $product->image = "product_images/31.jpg";
         $product->description = "Capacity : 1 TB
         Rotational Speed : 7200 RPM
         Interface : SATA III
@@ -433,6 +462,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "32";
         $product->name = "HGST Ultrastar";
+        $product->image = "product_images/32.jpg";
         $product->description = "• 16 (8P+8E) Cores
         • 24 Threads
         • CPU Cooler NOT Included
@@ -447,6 +477,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "33";
         $product->name = "ASUS ROG Strix B550-F";
+        $product->image = "product_images/33.jpg";
         $product->description = "• AMD AM4
         • AMD B550
         • 4 x DDR4 DIMM
@@ -460,6 +491,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "34";
         $product->name = "MSI MPG B550 Gaming Carbon WiFi";
+        $product->image = "product_images/34.jpg";
         $product->description = "• AMD AM4
         • AMD B550
         • 4 x DDR4 DIMM
@@ -473,6 +505,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "35";
         $product->name = "GIGABYTE Aorus X570 Elite";
+        $product->image = "product_images/35.jpg";
         $product->description = "• AMD AM4
         • AMD X570
         • 4 x DDR4 DIMM
@@ -486,6 +519,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "36";
         $product->name = "ASUS ROG Crosshair VIII Hero";
+        $product->image = "product_images/36.jpg";
         $product->description = "• AMD AM4
         • AMD X570
         • 4 x DDR4 DIMM
@@ -499,6 +533,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "37";
         $product->name = "MSI MAG B550 Tomahawk";
+        $product->image = "product_images/37.jpg";
         $product->description = "• AMD AM4
         • AMD B550
         • 4 x DDR4 DIMM
@@ -512,6 +547,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "38";
         $product->name = "ASRock B550M Steel Legend";
+        $product->image = "product_images/38.jpg";
         $product->description = "• AMD B550
         • DDR4, 4 x DIMM
         • 1 x DisplayPort
@@ -526,6 +562,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "39";
         $product->name = "ASUS Prime B450M-A/CSM";
+        $product->image = "product_images/39.jpg";
         $product->description = "Model :PRIME B450M-K
         CPU Support :AMD AM4 Socket AMD Ryzen™ 2nd";
         $product->price = 2999;
@@ -537,6 +574,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "40";
         $product->name = "GIGABYTE B450 AORUS Elite";
+        $product->image = "product_images/40.jpg";
         $product->description = "• AMD AM4
         • AMD B450
         • 4 x DDR4 DIMM
@@ -550,6 +588,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "41";
         $product->name = "Corsair Vengeance LPX";
+        $product->image = "product_images/41.jpg";
         $product->description = "• 16GB (8GBx2)
         • DDR4
         • 3200MHz
@@ -563,6 +602,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "42";
         $product->name = "G.Skill Trident Z RGB";
+        $product->image = "product_images/42.jpg";
         $product->description = "• 16GB (8GBx2)
         • DDR4
         • 3200MHz
@@ -576,6 +616,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "43";
         $product->name = "Crucial Ballistix";
+        $product->image = "product_images/43.jpg";
         $product->description = "Module densities up to 16GB
         Speeds up to 3000 MT/s
         Battle-tested design and performance";
@@ -588,6 +629,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "44";
         $product->name = "Kingston HyperX Predator";
+        $product->image = "product_images/44.jpg";
         $product->description = "• 16GB (8GBx2)
         • DDR4
         • 3200MHz
@@ -601,6 +643,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "45";
         $product->name = "Crucial Ballistix Max";
+        $product->image = "product_images/45.jpg";
         $product->description = "Module densities up to 16GB
         Speeds up to 3000 MT/s
         Battle-tested design and performance";
@@ -613,6 +656,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "46";
         $product->name = "Team Group T-Force Xtreem";
+        $product->image = "product_images/46.jpg";
         $product->description = "•Full mirror light penetration
         Latest ARGB technology
         Aluminum alloy heat sink with high performance
@@ -626,6 +670,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "47";
         $product->name = "Patriot Viper Steel";
+        $product->image = "product_images/47.jpg";
         $product->description = "• 32GB (16GBx2)
         • DDR4
         • 3200MHz";
@@ -638,6 +683,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "48";
         $product->name = "Corsair Dominator Platinum RGB";
+        $product->image = "product_images/48.jpg";
         $product->description = "Capacity : 16 GB
         Speed : 3200 MHz
         Part Number : CMT16GX4M2C3200C16
@@ -651,6 +697,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "49";
         $product->name = "ASUS ROG Swift PG279QZ";
+        $product->image = "product_images/49.jpg";
         $product->description = "• 16 (8P+8E) Cores
         • 24 Threads
         • CPU Cooler NOT Included
@@ -665,6 +712,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "50";
         $product->name = "Dell Alienware AW3418DW";
+        $product->image = "product_images/50.jpg";
         $product->description = "Size : 34.14
         Brightness : 300 cd/m²
         Contrast : 1000 : 1
@@ -678,6 +726,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "51";
         $product->name = "LG OLED C1";
+        $product->image = "product_images/51.jpg";
         $product->description = "• 16 (8P+8E) Cores
         • 24 Threads
         • CPU Cooler NOT Included
@@ -692,6 +741,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "52";
         $product->name = "Acer Predator X27";
+        $product->image = "product_images/52.jpg";
         $product->description = "'Size : 27
         Brightness : 400 cd/m²
         Contrast : 100000000 : 1
@@ -705,6 +755,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "53";
         $product->name = "SteelSeries QcK";
+        $product->image = "product_images/53.jpg";
         $product->description = "DIMENSION 930 X 300 X 3 MM";
         $product->price = 1090;
         $product->brand = "Intel";
@@ -715,6 +766,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "54";
         $product->name = "Corsair MM300";
+        $product->image = "product_images/54.jpg";
         $product->description = "DIMENSION 340 X 280 X 1 MM";
         $product->price = 450;
         $product->brand = "Intel";
@@ -725,6 +777,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "55";
         $product->name = "Logitech G240";
+        $product->image = "product_images/55.jpg";
         $product->description = "• 16 (8P+8E) Cores
         • 24 Threads
         • CPU Cooler NOT Included
@@ -739,6 +792,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "56";
         $product->name = "Razer Goliathus";
+        $product->image = "product_images/56.jpg";
         $product->description = "Dimension 294 x 920 x 3 mm";
         $product->price = 1090;
         $product->brand = "Razer";
