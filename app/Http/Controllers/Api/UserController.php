@@ -8,15 +8,84 @@ use App\Models\User;
 
 class UserController extends Controller
 {
+    // Retrieve the authenticated user's data
     public function getUserData(Request $request)
     {
-        // Retrieve the authenticated user's data
-        $user = $request->user()->role;
+        $user = $request->user();
+
+        if ($user) {
+            return response()->json($user);
+        }
+
+        return response()->json(['message' => 'User not found'], 404);
+    }
+
+    // Retrieve a specific user's data by their ID
+    public function show($id)
+    {
+        $user = User::find($id);
+
+        if ($user) {
+            return response()->json($user);
+        }
+
+        return response()->json(['message' => 'User not found'], 404);
+    }
+
+    // Add more user-related API methods as needed
+
+    // For example, to list all users:
+    public function index()
+    {
+        $users = User::all();
+        return response()->json($users);
+    }
+
+    // To create a new user:
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required',
+            // Add other validation rules for user creation
+        ]);
+
+        $user = User::create($data);
+        return response()->json($user, 201); // 201 Created status code
+    }
+
+    // To update a user's data by ID:
+    public function update(Request $request, $id)
+    {
+        $user = User::find($id);
+
+        if (!$user) {
+            return response()->json(['message' => 'User not found'], 404);
+        }
+
+        $data = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email,' . $id,
+            // Add other validation rules for user update
+        ]);
+
+        $user->update($data);
 
         return response()->json($user);
     }
-    public function show(User $user)
+
+    // To delete a user by ID:
+    public function destroy($id)
     {
-        return $user;
+        $user = User::find($id);
+
+        if (!$user) {
+            return response()->json(['message' => 'User not found'], 404);
+        }
+
+        $user->delete();
+
+        return response()->json(['message' => 'User deleted'], 200);
     }
 }

@@ -18,10 +18,13 @@ class OrderController extends Controller
             'user_name' => 'required',
             'address' => 'required',
             'total_price' => 'required',
-            'payment_receipt' => 'required',
             'shipment_method' => 'required',
             'products' => 'required|array|min:1',
+            'payment_receipt' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Ensure it's a file
         ]);
+
+        // Handle the payment receipt file
+        $paymentReceiptPath = $request->file('payment_receipt')->store('payment_receipts','public'); // Store the file and get the path
 
         // Create the order
         $order = Order::create([
@@ -29,13 +32,21 @@ class OrderController extends Controller
             'user_name' => $validatedData['user_name'],
             'address' => $validatedData['address'],
             'total_price' => $validatedData['total_price'],
-            'payment_receipt' => $validatedData['payment_receipt'],
             'shipment_method' => $validatedData['shipment_method'],
+            'payment_receipt' => $paymentReceiptPath, // Store the file path in the database
         ]);
 
+        // Iterate through the products and create OrderProduct records
         foreach ($validatedData['products'] as $productData) {
-            // Attach the product to the order with the quantity
-            $order->products()->attach($productData['product_id'], ['quantity' => $productData['quantity']]);
+            $product = json_decode($productData, true); // Decode the JSON data
+
+            // Assuming you have a Product model, you can retrieve the product by ID
+            $productModel = Product::find($product['product_id']);
+
+            if ($productModel) {
+                // Attach the product to the order with the quantity
+                $order->products()->attach($product['product_id'], ['quantity' => $product['quantity']]);
+            }
         }
 
         return response()->json(['message' => 'Order created successfully', 'order' => $order]);
