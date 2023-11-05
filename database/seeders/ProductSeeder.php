@@ -16,6 +16,7 @@ class ProductSeeder extends Seeder
         $product = new Product();
         $product->id = "1";
         $product->name = "Intel Core I7 13700k";
+        $product->image = "product_images/01.jpg";
         $product->description = "• 16 (8P+8E) Cores
         • 24 Threads
         • CPU Cooler NOT Included

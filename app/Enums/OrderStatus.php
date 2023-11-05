@@ -7,11 +7,11 @@ enum OrderStatusEnum: string {
     case Preparing = 'Preparing';
     case Packing = 'Packing';
     case Delivering = 'Delivering';
-    case CompleteDelivery = 'Complete Delivery';
+    case CompleteDelivery = 'CompleteDelivery';
 
-    case ReportPending = 'Report Pending';
-    case RefundPending = 'Refund Pending';
-    case ResentPending = 'Resend Pending';
+    case ReportPending = 'ReportPending';
+    case RefundPending = 'RefundPending';
+    case ResentPending = 'ResendPending';
     case Refunding = 'Refunding';
-    case CompleteRefund = 'Complete Refund';
+    case CompleteRefund = 'CompleteRefund';
 }
