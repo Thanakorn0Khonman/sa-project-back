@@ -11,7 +11,7 @@ enum OrderStatusEnum: string {
 
     case ReportPending = 'ReportPending';
     case RefundPending = 'RefundPending';
-    case ResentPending = 'ResendPending';
+    case ResentPending = 'ResentPending';
     case Refunding = 'Refunding';
     case CompleteRefund = 'CompleteRefund';
 }
