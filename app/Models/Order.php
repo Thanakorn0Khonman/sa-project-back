@@ -19,7 +19,7 @@ class Order extends Model
         'products',
         'products.*.productId',
         'products.*.quantity',
-        'status',        
+        'status',
         // Add other fillable attributes here
     ];
 
@@ -29,8 +29,12 @@ class Order extends Model
     }
 
     public function products()
-{
-    return $this->belongsToMany(Product::class)->withPivot('quantity');
-}
+    {
+        return $this->belongsToMany(Product::class)->withPivot('quantity');
+    }
 
+    public function report()
+    {
+        return $this->hasOne(Report::class);
+    }
 }

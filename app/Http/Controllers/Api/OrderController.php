@@ -56,12 +56,10 @@ class OrderController extends Controller
     public function show($id)
     {
         $order = Order::find($id);
-
         if (!$order) {
             return response()->json(['message' => 'Order not found'], 404);
         }
-
-        return response()->json(['order' => $order]);
+        return response()->json($order);
     }
 
     // Update an existing order by ID
@@ -115,6 +113,17 @@ class OrderController extends Controller
         $orders = Order::all(); // Assuming you have an Order model
 
         return response()->json(['orders' => $orders], 200);
+    }
+
+    public function showSpecific($id)
+    {
+        $order = Order::find($id);
+        $product = $order->products;
+
+        if (!$order) {
+            return response()->json(['message' => 'Order not found'], 404);
+        }
+        return response()->json($order);
     }
 
     public function update_status(Request $request, $id)
