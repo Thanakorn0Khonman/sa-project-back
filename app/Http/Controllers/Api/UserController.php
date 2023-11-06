@@ -66,9 +66,13 @@ class UserController extends Controller
         }
 
         $data = $request->validate([
+            'username' => 'required',
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' . $id,
-            // Add other validation rules for user update
+            'address' => 'required|string|max:255', // Add validation rules for address
+            'bank' => 'required|string|max:255', // Add validation rules for bank
+            'bank_number' => 'required|string|max:20', // Add validation rules for bank number
+            // Add validation rules for other fields as needed
         ]);
 
         $user->update($data);
