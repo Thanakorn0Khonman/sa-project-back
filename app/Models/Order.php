@@ -34,6 +34,14 @@ class Order extends Model
         return $this->belongsToMany(Product::class)->withPivot('quantity');
     }
 
+    public function deductProductQuantities()
+    {
+        foreach ($this->products as $product) {
+            $quantityToDeduct = $product->pivot->quantity;
+            $product->decrement('quantity', $quantityToDeduct);
+        }
+    }
+
     public function report()
     {
         return $this->hasOne(Report::class);

@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Validator;
 class OrderController extends Controller
 {
     // Create a new order
+
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -49,8 +50,12 @@ class OrderController extends Controller
             }
         }
 
+        // Deduct product quantities
+        $order->deductProductQuantities();
+
         return response()->json(['message' => 'Order created successfully', 'order' => $order]);
     }
+
 
     // Retrieve a specific order by ID
     public function show($id)
