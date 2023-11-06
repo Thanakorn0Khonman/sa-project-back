@@ -70,15 +70,22 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' . $id,
             'address' => 'required|string|max:255', // Add validation rules for address
-            'bank' => 'required|string|max:255', // Add validation rules for bank
-            'bank_number' => 'required|string|max:20', // Add validation rules for bank number
-            // Add validation rules for other fields as needed
+            'bank' => 'nullable|string|max:255', // Add validation rules for bank
+            'bank_number' => 'nullable|string|max:20', // Add validation rules for bank number
         ]);
+
+        if ($request->hasFile('profile_img')) {
+            $profileImage = $request->file('profile_img');
+            $profileImageName = $profileImage->getClientOriginalName();
+            $imagePath = $profileImage->storeAs('profile_images', $profileImageName, 'public');
+            $user->profile_img = $imagePath; // Set the profile_img directly in the user model
+        }
 
         $user->update($data);
 
         return response()->json($user);
     }
+
 
     // To delete a user by ID:
     public function destroy($id)

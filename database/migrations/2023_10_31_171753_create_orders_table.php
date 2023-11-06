@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('payment_receipt')->nullable();
             $table->string('shipment_method');
             $table->string('status')->default('Pending'); // Add the 'status' field with default value 'Pending'
+            $table->string('bank_number')->nullable()->fixed(10);
             $table->timestamps();
         });
     }

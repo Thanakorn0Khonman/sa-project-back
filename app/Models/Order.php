@@ -20,6 +20,7 @@ class Order extends Model
         'products.*.productId',
         'products.*.quantity',
         'status',
+        'track_num',
         // Add other fillable attributes here
     ];
 

@@ -22,7 +22,8 @@ return new class extends Migration
             $table->string('password');
             $table->string('role')->default('Customer');
             $table->string('bank')->nullable();
-            $table->string('bank_number')->nullable();
+            $table->string('bank_number', 10)->nullable();
+            $table->string('profile_img')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

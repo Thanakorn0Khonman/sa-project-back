@@ -67,6 +67,7 @@ Route::get('orders', [OrderController::class, 'index']);
 
 Route::apiResource('user', UserController::class);
 Route::apiResource('order', OrderController::class);
+Route::put('/orders/updateTrack/{id}/', [OrderController::class,'updateTrack']);
 Route::get('/showOrderSpecific/{id}', [OrderController::class, 'showSpecific']);
 
 Route::put('/orders/{id}/update_status', [OrderController::class,'update_status']);
