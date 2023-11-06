@@ -24,6 +24,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
+        $order = $user->orders;
 
         if ($user) {
             return response()->json($user);
@@ -87,5 +88,19 @@ class UserController extends Controller
         $user->delete();
 
         return response()->json(['message' => 'User deleted'], 200);
+    }
+
+    public function getUserOrders($id)
+    {
+        $user = User::find($id);
+
+        if (!$user) {
+            return response()->json(['message' => 'User not found'], 404);
+        }
+
+        // Use the relationship defined in the User model (e.g., orders) to retrieve orders
+        $orders = $user->orders;
+
+        return response()->json($orders);
     }
 }
