@@ -42,8 +42,8 @@ class Order extends Model
         }
     }
 
-    public function report()
+    public function reports()
     {
-        return $this->hasOne(Report::class);
+        return $this->hasMany(Report::class);
     }
 }
