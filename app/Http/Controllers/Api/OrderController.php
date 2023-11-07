@@ -124,6 +124,7 @@ class OrderController extends Controller
     {
         $order = Order::find($id);
         $product = $order->products;
+        $report = $order->reports;
 
         if (!$order) {
             return response()->json(['message' => 'Order not found'], 404);

@@ -11,12 +11,14 @@ class CreateReportsTable extends Migration
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('order_id'); // Foreign key to link with orders
-            $table->text('description');
-            // Add other columns as needed
+            $table->unsignedBigInteger('user_id'); // Foreign key to link with users
+            $table->text('reason');
+            $table->string('telephone')->fixed(10); // Fixed typo: it should be 'telephone' instead of 'telphone'
             $table->timestamps();
 
-            // Define foreign key constraint
+            // Define foreign key constraints
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // Corrected 'user' to 'users'
         });
     }
 
