@@ -19,7 +19,15 @@ class Product extends Model
         'image', // Add brand to the fillable array
     ];
     public function orders()
-{
-    return $this->belongsToMany(Order::class)->withPivot('quantity');
-}
+    {
+        return $this->belongsToMany(Order::class)->withPivot('quantity');
+    }
+
+    public function deductProductQuantities()
+    {
+        foreach ($this->products as $product) {
+            $quantityToDeduct = $product->pivot->quantity;
+            $product->decrement('quantity', $quantityToDeduct);
+        }
+    }
 }

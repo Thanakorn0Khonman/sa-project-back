@@ -20,6 +20,7 @@ class Order extends Model
         'products.*.productId',
         'products.*.quantity',
         'status',
+        'track_num',
         // Add other fillable attributes here
     ];
 
@@ -31,6 +32,14 @@ class Order extends Model
     public function products()
     {
         return $this->belongsToMany(Product::class)->withPivot('quantity');
+    }
+
+    public function deductProductQuantities()
+    {
+        foreach ($this->products as $product) {
+            $quantityToDeduct = $product->pivot->quantity;
+            $product->decrement('quantity', $quantityToDeduct);
+        }
     }
 
     public function report()

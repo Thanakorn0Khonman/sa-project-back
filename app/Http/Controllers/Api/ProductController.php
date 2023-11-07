@@ -72,4 +72,47 @@ class ProductController extends Controller
         $product->delete();
         return response()->json(['message' => 'Product deleted'], 204);
     }
+
+    public function addQuantity(Request $request, $id)
+    {
+        // Find the product by its ID
+        $product = Product::find($id);
+
+        if (!$product) {
+            return response()->json(['message' => 'Product not found'], 404);
+        }
+
+        // Validate and get the quantity to add from the request
+        $validatedData = $request->validate([
+            'quantity' => 'required|integer|min:1',
+        ]);
+
+        // Update the product's quantity by adding the provided quantity
+        $product->quantity += $validatedData['quantity'];
+        $product->save();
+
+        return response()->json(['message' => 'Quantity added successfully', 'product' => $product]);
+    }
+
+    public function removeQuantity(Request $request, $id)
+    {
+        // Find the product by its ID
+        $product = Product::find($id);
+
+        if (!$product) {
+            return response()->json(['message' => 'Product not found'], 404);
+        }
+
+        // Validate and get the quantity to remove from the request
+        $validatedData = $request->validate([
+            'quantity' => 'required|integer|min:1|max:' . $product->quantity,
+        ]);
+
+        // Update the product's quantity by subtracting the provided quantity
+        $product->quantity -= $validatedData['quantity'];
+        $product->save();
+
+        return response()->json(['message' => 'Quantity removed successfully', 'product' => $product]);
+    }
+    
 }

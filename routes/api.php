@@ -66,8 +66,12 @@ Route::post('place-order', [OrderController::class, 'store']);
 Route::get('orders', [OrderController::class, 'index']);
 
 Route::apiResource('user', UserController::class);
+Route::put('/user/updateSp/{id}', [UserController::class,'updateSp']);
 Route::apiResource('order', OrderController::class);
+Route::put('/orders/updateTrack/{id}/', [OrderController::class,'updateTrack']);
 Route::get('/showOrderSpecific/{id}', [OrderController::class, 'showSpecific']);
+Route::put('/product/addStock/{id}', [ProductController::class,'addQuantity']);
+Route::put('/product/removeStock/{id}', [ProductController::class,'removeQuantity']);
 
 Route::put('/orders/{id}/update_status', [OrderController::class,'update_status']);
 

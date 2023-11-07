@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Validator;
 class OrderController extends Controller
 {
     // Create a new order
+
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -24,7 +25,7 @@ class OrderController extends Controller
         ]);
 
         // Handle the payment receipt file
-        $paymentReceiptPath = $request->file('payment_receipt')->store('payment_receipts','public'); // Store the file and get the path
+        $paymentReceiptPath = $request->file('payment_receipt')->store('payment_receipts', 'public'); // Store the file and get the path
 
         // Create the order
         $order = Order::create([
@@ -49,8 +50,12 @@ class OrderController extends Controller
             }
         }
 
+        // Deduct product quantities
+        $order->deductProductQuantities();
+
         return response()->json(['message' => 'Order created successfully', 'order' => $order]);
     }
+
 
     // Retrieve a specific order by ID
     public function show($id)
@@ -124,6 +129,30 @@ class OrderController extends Controller
             return response()->json(['message' => 'Order not found'], 404);
         }
         return response()->json($order);
+    }
+
+    public function updateTrack(Request $request, $id)
+    {
+        $order = Order::find($id);
+
+        if (!$order) {
+            return response()->json(['message' => 'Order not found'], 404);
+        }
+
+        $validator = Validator::make($request->all(), [
+            'track_num' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 400);
+        }
+
+        $validatedData = $validator->validated();
+
+        // Update the order with new data
+        $order->update($validatedData);
+
+        return response()->json(['message' => 'Order updated successfully', 'order' => $order]);
     }
 
     public function update_status(Request $request, $id)

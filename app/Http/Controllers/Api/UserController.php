@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller
 {
@@ -66,15 +67,55 @@ class UserController extends Controller
         }
 
         $data = $request->validate([
+            'username' => 'required',
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' . $id,
-            // Add other validation rules for user update
+            'address' => 'required|string|max:255', // Add validation rules for address
+            'bank' => 'nullable|string|max:255', // Add validation rules for bank
+            'bank_number' => 'nullable|string|max:20', // Add validation rules for bank number
+            'profile_img' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
+
+        if ($request->hasFile('profile_img')) {
+            $imagePath = $request->file('profile_img')->store('profile_img', 'public');
+            $validatedData['profile_img'] = $imagePath;
+        }
 
         $user->update($data);
 
         return response()->json($user);
     }
+
+    public function updateSp(Request $request, $id)
+    {
+        $user = User::find($id);
+
+        if (!$user) {
+            return response()->json(['message' => 'User not found'], 404);
+        }
+
+        Log::info($request->all());
+
+        $data = $request->validate([
+            'username' => 'required',
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email,' . $id,
+            'address' => 'required|string|max:255', // Add validation rules for address
+            'bank' => 'nullable|string|max:255', // Add validation rules for bank
+            'bank_number' => 'nullable|string|max:20', // Add validation rules for bank number
+            'profile_img' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        if ($request->hasFile('profile_img')) {
+            $imagePath = $request->file('profile_img')->store('profile_img', 'public');
+            $data['profile_img'] = $imagePath;
+        }
+
+        $user->update($data);
+
+        return response()->json([$user]);
+    }
+
 
     // To delete a user by ID:
     public function destroy($id)
