@@ -13,6 +13,18 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        \App\Models\User::factory()->create([
+            'role' => 'Audit',
+            'username' => 'Audit',
+            'name' => 'Staff Audit',
+            'email' => 'audit@example.com',
+        ]);
+
+        \App\Models\User::factory()->create([
+            'role' => 'Delivery',
+            'username' => 'Delivery',
+            'name' => 'Staff Delivery',
+            'email' => 'delivery@example.com',
+        ]);
     }
 }

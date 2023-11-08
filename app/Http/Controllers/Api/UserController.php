@@ -71,6 +71,7 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' . $id,
             'address' => 'required|string|max:255', // Add validation rules for address
+            'phone' => 'nullable|string|max:20',
             'bank' => 'nullable|string|max:255', // Add validation rules for bank
             'bank_number' => 'nullable|string|max:20', // Add validation rules for bank number
             'profile_img' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
@@ -99,6 +100,7 @@ class UserController extends Controller
         $data = $request->validate([
             'username' => 'required',
             'name' => 'required',
+            'phone' => 'nullable',
             'email' => 'required|email|unique:users,email,' . $id,
             'address' => 'required|string|max:255', // Add validation rules for address
             'bank' => 'nullable|string|max:255', // Add validation rules for bank

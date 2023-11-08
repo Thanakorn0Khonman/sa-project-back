@@ -61,6 +61,7 @@ class OrderController extends Controller
     public function show($id)
     {
         $order = Order::find($id);
+        $user = $order->user;
         if (!$order) {
             return response()->json(['message' => 'Order not found'], 404);
         }
