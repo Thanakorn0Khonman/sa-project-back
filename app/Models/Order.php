@@ -21,6 +21,7 @@ class Order extends Model
         'products.*.quantity',
         'status',
         'track_num',
+        'user_role',
         // Add other fillable attributes here
     ];
 

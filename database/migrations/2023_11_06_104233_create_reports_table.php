@@ -12,8 +12,9 @@ class CreateReportsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('order_id'); // Foreign key to link with orders
             $table->unsignedBigInteger('user_id'); // Foreign key to link with users
+            $table->string('report_img')->nullable();
             $table->text('reason');
-            $table->string('telephone')->fixed(10); // Fixed typo: it should be 'telephone' instead of 'telphone'
+            $table->string('telephone')->fixed(10)->nullable(); // Fixed typo: it should be 'telephone' instead of 'telphone'
             $table->timestamps();
 
             // Define foreign key constraints

@@ -71,6 +71,7 @@ Route::put('/user/updateSp/{id}', [UserController::class,'updateSp']);
 Route::apiResource('order', OrderController::class);
 Route::apiResource('report', ReportController::class);
 Route::post('report/{id}', [ReportController::class, 'storeById']);
+Route::post('report/{id}/byStaff', [ReportController::class, 'storeByIdStaff']);
 Route::put('/orders/updateTrack/{id}/', [OrderController::class,'updateTrack']);
 Route::get('/showOrderSpecific/{id}', [OrderController::class, 'showSpecific']);
 Route::put('/product/addStock/{id}', [ProductController::class,'addQuantity']);

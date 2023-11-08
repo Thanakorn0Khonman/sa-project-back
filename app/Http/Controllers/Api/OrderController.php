@@ -22,6 +22,7 @@ class OrderController extends Controller
             'shipment_method' => 'required',
             'products' => 'required|array|min:1',
             'payment_receipt' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Ensure it's a file
+            'user_role' => 'nullable|string|max:30',
         ]);
 
         // Handle the payment receipt file
@@ -35,6 +36,7 @@ class OrderController extends Controller
             'total_price' => $validatedData['total_price'],
             'shipment_method' => $validatedData['shipment_method'],
             'payment_receipt' => $paymentReceiptPath, // Store the file path in the database
+            'user_role' => $validatedData['user_role'],
         ]);
 
         // Iterate through the products and create OrderProduct records
@@ -122,7 +124,7 @@ class OrderController extends Controller
             return response()->json(['message' => 'Order not found'], 404);
         }
 
-        $order->reports->each->delete();
+        $order->report->delete();
 
         return response()->json(['message' => 'Order deleted successfully']);
     }
