@@ -44,10 +44,6 @@ class ReportController extends Controller
             return response()->json(['message' => 'Order not found'], 404);
         }
 
-        if ($order->reports->count() > 0) {
-            return response()->json(['message' => 'Already got a report!'], 400);
-        }
-
         // Get the telephone from the order's user
         $telephone = $order->user->phone;
 

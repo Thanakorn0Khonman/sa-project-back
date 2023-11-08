@@ -44,6 +44,6 @@ class Order extends Model
 
     public function reports()
     {
-        return $this->hasMany(Report::class);
+        return $this->belongsTo(Report::class);
     }
 }
