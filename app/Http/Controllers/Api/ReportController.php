@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use App\Models\Report; // Assuming you have a "Report" model
 
 class ReportController extends Controller
@@ -23,6 +24,42 @@ class ReportController extends Controller
     public function store(Request $request)
     {
         $report = Report::create($request->all());
+        return response()->json($report, 201);
+    }
+
+    public function storeById(Request $request, $id)
+    {
+
+        $data = $request->validate([
+            'reason' => 'required|max: 255', // Validate and get the 'reason' from the request
+        ]);
+
+        // Find the order based on your application's logic, e.g., by using a specific parameter or condition
+        $order = Order::find($id);
+
+        // Get the authenticated user's ID
+        $user_id = $order->user->id;
+
+        if (!$order) {
+            return response()->json(['message' => 'Order not found'], 404);
+        }
+
+        if ($order->reports->count() > 0) {
+            return response()->json(['message' => 'Already got a report!'], 400);
+        }
+
+        // Get the telephone from the order's user
+        $telephone = $order->user->phone;
+
+        // Create the report with the specified attributes
+        $report = Report::create([
+            'telephone' => $telephone,
+            'reason' => $data['reason'],
+            'user_id' => $user_id,
+            'order_id' => $order->id,
+            // Include other report attributes from the request if needed
+        ]);
+
         return response()->json($report, 201);
     }
 

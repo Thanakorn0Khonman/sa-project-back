@@ -113,6 +113,20 @@ class OrderController extends Controller
         return response()->json(['message' => 'Order deleted successfully']);
     }
 
+    public function destroyReport($id)
+    {
+        $order = Order::find($id);
+        $report = $order->reports;
+
+        if (!$order) {
+            return response()->json(['message' => 'Order not found'], 404);
+        }
+
+        $order->reports->each->delete();
+
+        return response()->json(['message' => 'Order deleted successfully']);
+    }
+
     public function index()
     {
         // Retrieve all orders
