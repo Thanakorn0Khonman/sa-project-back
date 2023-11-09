@@ -23,6 +23,7 @@ class OrderController extends Controller
             'products' => 'required|array|min:1',
             'payment_receipt' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Ensure it's a file
             'user_role' => 'nullable|string|max:30',
+            'user_phone' => 'nullable|string|',
         ]);
 
         // Handle the payment receipt file
@@ -37,6 +38,7 @@ class OrderController extends Controller
             'shipment_method' => $validatedData['shipment_method'],
             'payment_receipt' => $paymentReceiptPath, // Store the file path in the database
             'user_role' => $validatedData['user_role'],
+            'user_phone' => $validatedData['user_phone'],
         ]);
 
         // Iterate through the products and create OrderProduct records
@@ -118,7 +120,7 @@ class OrderController extends Controller
     public function destroyReport($id)
     {
         $order = Order::find($id);
-        $report = $order->reports;
+        $report = $order->report;
 
         if (!$order) {
             return response()->json(['message' => 'Order not found'], 404);
@@ -127,6 +129,20 @@ class OrderController extends Controller
         $order->report->delete();
 
         return response()->json(['message' => 'Order deleted successfully']);
+    }
+
+    public function clearTrackNum($id)
+    {
+        $order = Order::find($id);
+
+        if (!$order) {
+            return response()->json(['message' => 'Order not found'], 404);
+        }
+
+        // Set the Track_num to an empty string
+        $order->update(['Track_num' => '']);
+
+        return response()->json(['message' => 'Track_num reset successfully']);
     }
 
     public function index()

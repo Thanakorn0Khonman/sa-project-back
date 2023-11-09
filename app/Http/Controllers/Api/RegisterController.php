@@ -29,7 +29,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required','confirmed', Rules\Password::defaults()],
-            'phone' => ['required', 'string', 'max:10'],
+            'phone' => ['nullable', 'string', 'max:10'],
             'username' =>['required', 'string', 'max:255'],
             'address' =>['required', 'string', 'max:255'],
         ]);

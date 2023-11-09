@@ -22,6 +22,7 @@ class Order extends Model
         'status',
         'track_num',
         'user_role',
+        'user_phone',
         // Add other fillable attributes here
     ];
 
@@ -43,8 +44,8 @@ class Order extends Model
         }
     }
 
-    public function reports()
+    public function report()
     {
-        return $this->belongsTo(Report::class);
+        return $this->hasOne(Report::class);
     }
 }

@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('bank_number')->nullable()->fixed(10);
             $table->string('track_num')->nullable()->default('');
             $table->string('user_role')->nullable();
+            $table->string('user_phone')->nullable();
             $table->timestamps();
         });
     }

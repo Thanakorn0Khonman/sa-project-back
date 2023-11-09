@@ -70,6 +70,7 @@ Route::apiResource('user', UserController::class);
 Route::put('/user/updateSp/{id}', [UserController::class,'updateSp']);
 Route::apiResource('order', OrderController::class);
 Route::apiResource('report', ReportController::class);
+Route::apiResource('reports', ReportController::class);
 Route::post('report/{id}', [ReportController::class, 'storeById']);
 Route::post('report/{id}/byStaff', [ReportController::class, 'storeByIdStaff']);
 Route::put('/orders/updateTrack/{id}/', [OrderController::class,'updateTrack']);
@@ -81,3 +82,4 @@ Route::put('/orders/{id}/update_status', [OrderController::class,'update_status'
 
 Route::delete('/orders/{id}/delete_order', [OrderController::class,'destroy']);
 Route::delete('/orders/{id}/deleteReport', [OrderController::class, 'destroyReport']);
+Route::put('/orders/{id}/clearTrackNum', [OrderController::class, 'clearTrackNum']);
